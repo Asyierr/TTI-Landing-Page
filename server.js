@@ -25,6 +25,10 @@ app.get("/register", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "pages", "register.html"));
 });
 
+app.get("/dashboard", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "pages", "dashboard.html"));
+});
+
 app.listen(PORT, () => {
   console.log(`🚗 GIIAS 2026 website running at http://localhost:${PORT}`);
 });
