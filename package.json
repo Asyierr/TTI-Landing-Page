@@ -1,0 +1,13 @@
+{
+  "name": "antigravity-landing",
+  "version": "1.0.0",
+  "description": "Interactive zero-gravity landing page with login/register UI, built with Node.js + Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

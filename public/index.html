@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GIIAS 2026 — Gaikindo Indonesia International Auto Show</title>
+<meta name="description" content="GIIAS 2026 — Pameran otomotif internasional terbesar di Asia Tenggara. Temukan 60+ brand, ratusan model terbaru, dan debut global di ICE BSD City, Tangerang." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/giias.css" />
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav" id="top">
+  <div class="wrap nav__row">
+    <a href="/" class="brand" id="nav-brand">
+      <div class="brand__emblem">
+        <span class="brand__g">G</span>
+      </div>
+      <div class="brand__text">
+        <span class="brand__name">GIIAS</span>
+        <span class="brand__sub">2026</span>
+      </div>
+    </a>
+    <div class="nav__links">
+      <a href="#showcase" class="nav__link">Mobil</a>
+      <a href="#brands" class="nav__link">Brand</a>
+      <a href="#info" class="nav__link">Info</a>
+      <a href="#tiket" class="nav__link">Tiket</a>
+    </div>
+    <div class="nav__cta">
+      <a href="/login" class="btn btn--ghost-light" id="nav-login-btn">Masuk</a>
+      <a href="#tiket" class="btn btn--primary" id="nav-ticket-btn">Beli Tiket</a>
+    </div>
+    <button class="nav__burger" id="nav-burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#showcase" class="mobile-menu__link">Mobil</a>
+  <a href="#brands" class="mobile-menu__link">Brand</a>
+  <a href="#info" class="mobile-menu__link">Info</a>
+  <a href="#tiket" class="mobile-menu__link">Tiket</a>
+  <a href="/login" class="mobile-menu__link">Masuk</a>
+  <a href="/register" class="mobile-menu__link">Daftar</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero">
+  <div class="hero__bg">
+    <img src="/img/cars/hero_banner.png" alt="GIIAS Auto Show Hall" class="hero__bg-img" />
+    <div class="hero__overlay"></div>
+  </div>
+  <canvas class="hero__particles" id="particles-canvas" aria-hidden="true"></canvas>
+  <div class="wrap hero__inner">
+    <div class="hero__badge reveal reveal--1">
+      <span class="hero__badge-dot"></span>
+      Gaikindo Indonesia International Auto Show
+    </div>
+    <h1 class="hero__title reveal reveal--2">
+      Masa Depan<br/>
+      <span class="hero__title-grad">Otomotif Indonesia</span><br/>
+      Ada di Sini
+    </h1>
+    <p class="hero__sub reveal reveal--3">
+      60+ brand global · 54+ model baru · World Premiere · ICE BSD City, Tangerang
+    </p>
+    <div class="hero__actions reveal reveal--4">
+      <a href="#tiket" class="btn btn--accent btn--lg" id="hero-ticket-btn">🎫 Dapatkan Tiket</a>
+      <a href="#showcase" class="btn btn--ghost-light btn--lg" id="hero-explore-btn">Jelajahi Mobil →</a>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown reveal reveal--5" id="countdown">
+      <div class="countdown__item">
+        <span class="countdown__num" id="cd-days">00</span>
+        <span class="countdown__label">Hari</span>
+      </div>
+      <div class="countdown__sep">:</div>
+      <div class="countdown__item">
+        <span class="countdown__num" id="cd-hours">00</span>
+        <span class="countdown__label">Jam</span>
+      </div>
+      <div class="countdown__sep">:</div>
+      <div class="countdown__item">
+        <span class="countdown__num" id="cd-mins">00</span>
+        <span class="countdown__label">Menit</span>
+      </div>
+      <div class="countdown__sep">:</div>
+      <div class="countdown__item">
+        <span class="countdown__num" id="cd-secs">00</span>
+        <span class="countdown__label">Detik</span>
+      </div>
+    </div>
+    <p class="hero__note reveal reveal--5">✨ Gerakin kursor di area ini — titik-titiknya bakal lari. Coba klik juga!</p>
+  </div>
+  <div class="hero__scroll-hint" id="scroll-hint">
+    <span>Scroll</span>
+    <div class="hero__scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ===================== STATS STRIP ===================== -->
+<section class="stats-strip" id="stats">
+  <div class="wrap stats__grid">
+    <div class="stat-item reveal-on-scroll">
+      <span class="stat-item__num" data-count="60">0</span><span class="stat-item__unit">+</span>
+      <span class="stat-item__label">Brand Global</span>
+    </div>
+    <div class="stat-item reveal-on-scroll">
+      <span class="stat-item__num" data-count="54">0</span><span class="stat-item__unit">+</span>
+      <span class="stat-item__label">Model Baru</span>
+    </div>
+    <div class="stat-item reveal-on-scroll">
+      <span class="stat-item__num" data-count="11">0</span><span class="stat-item__unit"></span>
+      <span class="stat-item__label">Hari Pameran</span>
+    </div>
+    <div class="stat-item reveal-on-scroll">
+      <span class="stat-item__num" data-count="500">0</span><span class="stat-item__unit">rb+</span>
+      <span class="stat-item__label">Pengunjung</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CAR SHOWCASE ===================== -->
+<section class="section showcase" id="showcase">
+  <div class="wrap">
+    <div class="section__head reveal-on-scroll">
+      <span class="section__label">Lineup GIIAS 2026</span>
+      <h2 class="section__title">Mobil-Mobil yang<br/>Wajib Lo Lihat</h2>
+      <p class="section__sub">Dari EV futuristik sampai SUV bertenaga — semua ada di satu atap.</p>
+    </div>
+
+    <!-- Brand Filter -->
+    <div class="filter-bar reveal-on-scroll" id="filter-bar" role="tablist">
+      <button class="filter-btn active" data-filter="all" role="tab" id="filter-all">Semua</button>
+      <button class="filter-btn" data-filter="toyota" role="tab" id="filter-toyota">Toyota</button>
+      <button class="filter-btn" data-filter="honda" role="tab" id="filter-honda">Honda</button>
+      <button class="filter-btn" data-filter="hyundai" role="tab" id="filter-hyundai">Hyundai</button>
+      <button class="filter-btn" data-filter="byd" role="tab" id="filter-byd">BYD</button>
+      <button class="filter-btn" data-filter="luxury" role="tab" id="filter-luxury">Luxury</button>
+      <button class="filter-btn" data-filter="mitsubishi" role="tab" id="filter-mitsubishi">Mitsubishi</button>
+      <button class="filter-btn" data-filter="suzuki" role="tab" id="filter-suzuki">Suzuki</button>
+    </div>
+
+    <!-- Car Grid -->
+    <div class="car-grid" id="car-grid">
+
+      <!-- Toyota -->
+      <div class="car-card reveal-on-scroll" data-brand="toyota" data-model="Toyota GR Sport Series" data-type="SUV · Sport" data-desc="Toyota hadir dengan lini GR Sport yang gahar dan bZ4X facelift — komitmen penuh menuju elektrifikasi. Urban Cruiser BEV juga jadi highlight debut tahun ini." id="card-toyota-1">
+        <div class="car-card__img-wrap">
+          <img src="/img/cars/toyota.png" alt="Toyota GIIAS 2026" class="car-card__img" loading="lazy" />
+          <div class="car-card__overlay">
+            <button class="car-card__zoom" aria-label="Lihat detail Toyota">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="car-card__body">
+          <div class="car-card__top">
+            <span class="car-card__brand">Toyota</span>
+            <span class="car-card__badge car-card__badge--hybrid">HEV · BEV</span>
+          </div>
+          <h3 class="car-card__model">GR Sport Series & bZ4X</h3>
+          <p class="car-card__type">SUV · Sport · Electric</p>
+          <div class="car-card__highlights">
+            <span>✦ GR Yaris facelift</span>
+            <span>✦ bZ4X updated</span>
+            <span>✦ Urban Cruiser BEV debut</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Honda -->
+      <div class="car-card reveal-on-scroll" data-brand="honda" data-model="Honda StepWGN HEV & Prelude" data-type="MPV · Hybrid" data-desc="Honda membawa angin segar dengan StepWGN HEV dan comeback legendaris Prelude — plus Super EV Concept yang mencuri perhatian seluruh pengunjung GIIAS." id="card-honda-1">
+        <div class="car-card__img-wrap">
+          <img src="/img/cars/honda.png" alt="Honda GIIAS 2026" class="car-card__img" loading="lazy" />
+          <div class="car-card__overlay">
+            <button class="car-card__zoom" aria-label="Lihat detail Honda">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="car-card__body">
+          <div class="car-card__top">
+            <span class="car-card__brand">Honda</span>
+            <span class="car-card__badge car-card__badge--hybrid">HEV</span>
+          </div>
+          <h3 class="car-card__model">StepWGN HEV & Prelude</h3>
+          <p class="car-card__type">MPV · Sedan · Concept</p>
+          <div class="car-card__highlights">
+            <span>✦ StepWGN HEV comeback</span>
+            <span>✦ Prelude reborn</span>
+            <span>✦ Super EV Concept</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hyundai -->
+      <div class="car-card reveal-on-scroll" data-brand="hyundai" data-model="Hyundai Stargazer Cartenz & IONIQ" data-type="MPV · Electric" data-desc="Hyundai tampil memukau dengan Stargazer Cartenz — edisi spesial terinspirasi pegunungan Papua. IONIQ 6 yang aerodinamis juga jadi magnet pengunjung GIIAS tahun ini." id="card-hyundai-1">
+        <div class="car-card__img-wrap">
+          <img src="/img/cars/hyundai.png" alt="Hyundai GIIAS 2026" class="car-card__img" loading="lazy" />
+          <div class="car-card__overlay">
+            <button class="car-card__zoom" aria-label="Lihat detail Hyundai">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="car-card__body">
+          <div class="car-card__top">
+            <span class="car-card__brand">Hyundai</span>
+            <span class="car-card__badge car-card__badge--ev">EV</span>
+          </div>
+          <h3 class="car-card__model">Stargazer Cartenz & IONIQ 6</h3>
+          <p class="car-card__type">MPV · Electric Sedan</p>
+          <div class="car-card__highlights">
+            <span>✦ Stargazer Cartenz edisi khusus</span>
+            <span>✦ Cartenz X debut</span>
+            <span>✦ IONIQ 6 sleek EV</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BYD -->
+      <div class="car-card reveal-on-scroll car-card--featured" data-brand="byd" data-model="BYD Seal, Atto 1 & Denza Series" data-type="Electric · PHEV" data-desc="BYD jadi bintang utama GIIAS dengan Atto 1 yang harganya kompetitif, Seal yang sporty, dan Denza Z9 GT yang mewah habis. YangWang U9 supercar EV juga dipamerkan untuk pertama kalinya!" id="card-byd-1">
+        <div class="car-card__featured-tag">🔥 Highlights</div>
+        <div class="car-card__img-wrap">
+          <img src="/img/cars/byd.png" alt="BYD GIIAS 2026" class="car-card__img" loading="lazy" />
+          <div class="car-card__overlay">
+            <button class="car-card__zoom" aria-label="Lihat detail BYD">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="car-card__body">
+          <div class="car-card__top">
+            <span class="car-card__brand">BYD · Denza</span>
+            <span class="car-card__badge car-card__badge--ev">Full EV</span>
+          </div>
+          <h3 class="car-card__model">Seal · Atto 1 · Denza Z9 GT</h3>
+          <p class="car-card__type">Sedan · SUV · PHEV Luxury</p>
+          <div class="car-card__highlights">
+            <span>✦ Atto 1 harga kompetitif</span>
+            <span>✦ Denza Z9 GT mewah</span>
+            <span>✦ YangWang U9 supercar EV</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BMW & Mercedes — Luxury -->
+      <div class="car-card reveal-on-scroll" data-brand="luxury" data-model="BMW X5 M Sport & Mercedes-Benz GLE" data-type="SUV · Luxury" data-desc="BMW dan Mercedes-Benz selalu jadi destinasi wajib di GIIAS. BMW tampil dengan X5 M Sport yang bertenaga, sementara Mercedes memamerkan GLE dan C-Class terbaru dengan teknologi MBUX terkini." id="card-luxury-1">
+        <div class="car-card__img-wrap">
+          <img src="/img/cars/bmw_mercedes.png" alt="BMW Mercedes GIIAS 2026" class="car-card__img" loading="lazy" />
+          <div class="car-card__overlay">
+            <button class="car-card__zoom" aria-label="Lihat detail BMW Mercedes">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="car-card__body">
+          <div class="car-card__top">
+            <span class="car-card__brand">BMW · Mercedes-Benz</span>
+            <span class="car-card__badge car-card__badge--luxury">Premium</span>
+          </div>
+          <h3 class="car-card__model">X5 M Sport & GLE</h3>
+          <p class="car-card__type">Luxury SUV · Sedan</p>
+          <div class="car-card__highlights">
+            <span>✦ BMW X5 M Sport terbaru</span>
+            <span>✦ Mercedes GLE facelift</span>
+            <span>✦ C-Class AMG Line</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mitsubishi -->
+      <div class="car-card reveal-on-scroll" data-brand="mitsubishi" data-model="Mitsubishi Xpander Cross & Pajero Sport" data-type="MPV · SUV" data-desc="Mitsubishi tetap jadi raja MPV dengan Xpander Cross yang diperbarui, plus Pajero Sport facelift yang makin gahar. Outlander PHEV juga hadir memperkuat lini hybrid Mitsubishi di Indonesia." id="card-mitsubishi-1">
+        <div class="car-card__img-wrap">
+          <img src="/img/cars/mitsubishi_suzuki.png" alt="Mitsubishi Suzuki GIIAS 2026" class="car-card__img" loading="lazy" />
+          <div class="car-card__overlay">
+            <button class="car-card__zoom" aria-label="Lihat detail Mitsubishi">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="car-card__body">
+          <div class="car-card__top">
+            <span class="car-card__brand">Mitsubishi</span>
+            <span class="car-card__badge car-card__badge--suv">SUV · MPV</span>
+          </div>
+          <h3 class="car-card__model">Xpander Cross & Pajero Sport</h3>
+          <p class="car-card__type">MPV · SUV</p>
+          <div class="car-card__highlights">
+            <span>✦ Xpander Cross updated</span>
+            <span>✦ Pajero Sport facelift</span>
+            <span>✦ Outlander PHEV</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suzuki -->
+      <div class="car-card reveal-on-scroll" data-brand="suzuki" data-model="Suzuki Grand Vitara & Ertiga Hybrid" data-type="SUV · Hybrid" data-desc="Suzuki membuktikan diri dengan Grand Vitara Hybrid yang irit dan tangguh, serta Ertiga Hybrid yang makin diminati keluarga Indonesia. Jimny 5-door juga jadi bintang booth Suzuki tahun ini!" id="card-suzuki-1">
+        <div class="car-card__img-wrap">
+          <img src="/img/cars/mitsubishi_suzuki.png" alt="Suzuki GIIAS 2026" class="car-card__img" loading="lazy" />
+          <div class="car-card__overlay">
+            <button class="car-card__zoom" aria-label="Lihat detail Suzuki">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="car-card__body">
+          <div class="car-card__top">
+            <span class="car-card__brand">Suzuki</span>
+            <span class="car-card__badge car-card__badge--hybrid">Hybrid</span>
+          </div>
+          <h3 class="car-card__model">Grand Vitara & Ertiga Hybrid</h3>
+          <p class="car-card__type">SUV · MPV · Hybrid</p>
+          <div class="car-card__highlights">
+            <span>✦ Grand Vitara Hybrid</span>
+            <span>✦ Ertiga Hybrid family</span>
+            <span>✦ Jimny 5-door highlight</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Honda extra -->
+      <div class="car-card reveal-on-scroll" data-brand="honda" data-model="Honda CR-V e:HEV" data-type="SUV · Hybrid" data-desc="Honda CR-V generasi terbaru dengan sistem e:HEV full hybrid tampil mengesankan — kombinasi efisiensi bahan bakar kelas dunia dengan kabin premium yang luas dan nyaman untuk keluarga." id="card-honda-2">
+        <div class="car-card__img-wrap">
+          <img src="/img/cars/honda.png" alt="Honda CR-V GIIAS 2026" class="car-card__img" loading="lazy" />
+          <div class="car-card__overlay">
+            <button class="car-card__zoom" aria-label="Lihat detail Honda CR-V">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="car-card__body">
+          <div class="car-card__top">
+            <span class="car-card__brand">Honda</span>
+            <span class="car-card__badge car-card__badge--hybrid">HEV</span>
+          </div>
+          <h3 class="car-card__model">CR-V e:HEV</h3>
+          <p class="car-card__type">SUV · Full Hybrid</p>
+          <div class="car-card__highlights">
+            <span>✦ e:HEV system terbaru</span>
+            <span>✦ Kabin premium lega</span>
+            <span>✦ Efisiensi tinggi</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /car-grid -->
+  </div>
+</section>
+
+<!-- ===================== BRAND WALL ===================== -->
+<section class="section brands-section" id="brands">
+  <div class="wrap">
+    <div class="section__head section__head--center reveal-on-scroll">
+      <span class="section__label">Peserta GIIAS 2026</span>
+      <h2 class="section__title">60+ Brand Otomotif Global</h2>
+      <p class="section__sub">Dari Jepang, Korea, Eropa, sampai China — semua hadir di ICE BSD City.</p>
+    </div>
+    <div class="brand-wall reveal-on-scroll" id="brand-wall">
+      <div class="brand-pill" id="bp-toyota">Toyota</div>
+      <div class="brand-pill" id="bp-honda">Honda</div>
+      <div class="brand-pill" id="bp-suzuki">Suzuki</div>
+      <div class="brand-pill" id="bp-mitsubishi">Mitsubishi</div>
+      <div class="brand-pill" id="bp-nissan">Nissan</div>
+      <div class="brand-pill" id="bp-daihatsu">Daihatsu</div>
+      <div class="brand-pill" id="bp-mazda">Mazda</div>
+      <div class="brand-pill" id="bp-subaru">Subaru</div>
+      <div class="brand-pill brand-pill--ev" id="bp-hyundai">Hyundai</div>
+      <div class="brand-pill brand-pill--ev" id="bp-kia">KIA</div>
+      <div class="brand-pill brand-pill--luxury" id="bp-bmw">BMW</div>
+      <div class="brand-pill brand-pill--luxury" id="bp-mercedes">Mercedes-Benz</div>
+      <div class="brand-pill brand-pill--luxury" id="bp-audi">Audi</div>
+      <div class="brand-pill brand-pill--luxury" id="bp-lexus">Lexus</div>
+      <div class="brand-pill brand-pill--luxury" id="bp-volvo">Volvo</div>
+      <div class="brand-pill brand-pill--luxury" id="bp-porsche">Porsche</div>
+      <div class="brand-pill brand-pill--ev" id="bp-byd">BYD</div>
+      <div class="brand-pill brand-pill--ev" id="bp-denza">Denza</div>
+      <div class="brand-pill brand-pill--ev" id="bp-geely">Geely</div>
+      <div class="brand-pill brand-pill--ev" id="bp-xpeng">Xpeng</div>
+      <div class="brand-pill brand-pill--ev" id="bp-aion">AION</div>
+      <div class="brand-pill" id="bp-gwm">GWM</div>
+      <div class="brand-pill" id="bp-mg">MG</div>
+      <div class="brand-pill" id="bp-wuling">Wuling</div>
+      <div class="brand-pill" id="bp-chery">Chery</div>
+      <div class="brand-pill" id="bp-jaecoo">Jaecoo</div>
+      <div class="brand-pill" id="bp-jetour">Jetour</div>
+      <div class="brand-pill" id="bp-neta">Neta</div>
+      <div class="brand-pill" id="bp-citroen">Citroën</div>
+      <div class="brand-pill" id="bp-vw">Volkswagen</div>
+      <div class="brand-pill" id="bp-mini">MINI</div>
+      <div class="brand-pill brand-pill--ev" id="bp-polytron">Polytron</div>
+      <div class="brand-pill brand-pill--ev" id="bp-vinfast">VinFast</div>
+      <div class="brand-pill brand-pill--ev" id="bp-aletra">Aletra</div>
+      <div class="brand-pill" id="bp-maxus">Maxus</div>
+      <div class="brand-pill" id="bp-seres">Seres</div>
+      <div class="brand-pill" id="bp-baic">BAIC</div>
+      <div class="brand-pill" id="bp-jeep">Jeep</div>
+      <div class="brand-pill" id="bp-ford">Ford</div>
+    </div>
+    <p class="brands-note reveal-on-scroll">
+      <span class="brands-note__dot brands-note__dot--ev"></span> EV / Listrik &nbsp;&nbsp;
+      <span class="brands-note__dot brands-note__dot--luxury"></span> Premium / Luxury
+    </p>
+  </div>
+</section>
+
+<!-- ===================== EVENT INFO ===================== -->
+<section class="section info-section" id="info">
+  <div class="wrap">
+    <div class="section__head reveal-on-scroll">
+      <span class="section__label">Informasi Event</span>
+      <h2 class="section__title">Semua yang Perlu Lo<br/>Tau Sebelum Datang</h2>
+    </div>
+    <div class="info-grid">
+      <div class="info-card reveal-on-scroll" id="info-date">
+        <div class="info-card__icon">📅</div>
+        <h3>Tanggal Pelaksanaan</h3>
+        <p class="info-card__main">24 Juli – 3 Agustus 2026</p>
+        <ul class="info-card__list">
+          <li><strong>VIP Day:</strong> 24 Juli · 12.00 – 21.00 WIB</li>
+          <li><strong>Weekdays:</strong> Sen–Jum · 11.00 – 21.00 WIB</li>
+          <li><strong>Weekend:</strong> Sab–Min · 10.00 – 21.00 WIB</li>
+        </ul>
+      </div>
+      <div class="info-card reveal-on-scroll" id="info-location">
+        <div class="info-card__icon">📍</div>
+        <h3>Lokasi</h3>
+        <p class="info-card__main">ICE BSD City, Tangerang</p>
+        <ul class="info-card__list">
+          <li>Indonesia Convention Exhibition</li>
+          <li>Jl. BSD Grand Boulevard, BSD City</li>
+          <li>Serpong, Tangerang Selatan</li>
+          <li><a href="https://maps.google.com" target="_blank" class="info-card__link">Buka di Google Maps →</a></li>
+        </ul>
+      </div>
+      <div class="info-card reveal-on-scroll" id="info-transport">
+        <div class="info-card__icon">🚌</div>
+        <h3>Cara ke Sana</h3>
+        <ul class="info-card__list">
+          <li>🚇 KRL → Stasiun BSD, lanjut shuttle</li>
+          <li>🚗 Tol Jakarta–Serpong → Exit BSD</li>
+          <li>🚌 Bus Transjakarta rute khusus GIIAS</li>
+          <li>🏍️ Parkir motor & mobil tersedia luas</li>
+        </ul>
+      </div>
+      <div class="info-card reveal-on-scroll" id="info-tips">
+        <div class="info-card__icon">💡</div>
+        <h3>Tips Berkunjung</h3>
+        <ul class="info-card__list">
+          <li>Beli tiket online lebih hemat</li>
+          <li>Datang pagi hari Weekday lebih lengang</li>
+          <li>Unduh aplikasi Auto360 untuk tiket</li>
+          <li>Bawa baterai tambahan untuk foto!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TIKET ===================== -->
+<section class="section tiket-section" id="tiket">
+  <div class="wrap">
+    <div class="section__head section__head--center reveal-on-scroll">
+      <span class="section__label">Harga Tiket</span>
+      <h2 class="section__title">Pilih Tiketmu,<br/>Mulai Petualangan</h2>
+      <p class="section__sub">Beli online lebih hemat. Tersedia via aplikasi Auto360.</p>
+    </div>
+    <div class="tiket-grid reveal-on-scroll">
+      <div class="tiket-card" id="tiket-weekday">
+        <div class="tiket-card__header">
+          <span class="tiket-card__day">Weekday</span>
+          <span class="tiket-card__sub">Senin – Jumat</span>
+        </div>
+        <div class="tiket-card__price">
+          <span class="tiket-card__amount">Rp 50.000</span>
+          <span class="tiket-card__note">Online · Auto360</span>
+        </div>
+        <div class="tiket-card__ots">Rp 75.000 on-the-spot</div>
+        <ul class="tiket-card__perks">
+          <li>✓ Akses semua hall pameran</li>
+          <li>✓ Free shuttle dari parkiran</li>
+          <li>✓ Program test drive</li>
+        </ul>
+        <a href="#" class="btn btn--outline btn--full" id="btn-tiket-weekday">Beli Weekday</a>
+      </div>
+
+      <div class="tiket-card tiket-card--featured" id="tiket-weekend">
+        <div class="tiket-card__popular">Paling Ramai</div>
+        <div class="tiket-card__header">
+          <span class="tiket-card__day">Weekend</span>
+          <span class="tiket-card__sub">Sabtu – Minggu</span>
+        </div>
+        <div class="tiket-card__price">
+          <span class="tiket-card__amount">Rp 100.000</span>
+          <span class="tiket-card__note">Online · Auto360</span>
+        </div>
+        <div class="tiket-card__ots">Rp 125.000 on-the-spot</div>
+        <ul class="tiket-card__perks">
+          <li>✓ Akses semua hall pameran</li>
+          <li>✓ Free shuttle dari parkiran</li>
+          <li>✓ Program test drive</li>
+          <li>✓ Live performance & hiburan</li>
+        </ul>
+        <a href="#" class="btn btn--accent btn--full" id="btn-tiket-weekend">Beli Weekend</a>
+      </div>
+
+      <div class="tiket-card tiket-card--vip" id="tiket-vip">
+        <div class="tiket-card__header">
+          <span class="tiket-card__day">VIP Day</span>
+          <span class="tiket-card__sub">24 Juli · Opening</span>
+        </div>
+        <div class="tiket-card__price">
+          <span class="tiket-card__amount">Rp 250.000</span>
+          <span class="tiket-card__note">Online · Auto360</span>
+        </div>
+        <div class="tiket-card__ots">Rp 300.000 on-the-spot</div>
+        <ul class="tiket-card__perks">
+          <li>✓ Akses eksklusif pembukaan resmi</li>
+          <li>✓ World Premiere launches</li>
+          <li>✓ Akses VIP lounge</li>
+          <li>✓ Priority test drive booking</li>
+        </ul>
+        <a href="#" class="btn btn--vip btn--full" id="btn-tiket-vip">Beli VIP Day</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" id="footer">
+  <div class="footer__top">
+    <div class="wrap footer__top-inner">
+      <div class="footer__brand">
+        <div class="brand">
+          <div class="brand__emblem brand__emblem--sm">
+            <span class="brand__g">G</span>
+          </div>
+          <div class="brand__text">
+            <span class="brand__name">GIIAS</span>
+            <span class="brand__sub">2026</span>
+          </div>
+        </div>
+        <p class="footer__tagline">Pameran otomotif internasional terbesar di Asia Tenggara</p>
+      </div>
+      <div class="footer__links-group">
+        <h4>Event</h4>
+        <a href="#showcase">Showcase Mobil</a>
+        <a href="#brands">Brand Peserta</a>
+        <a href="#info">Info Venue</a>
+        <a href="#tiket">Tiket</a>
+      </div>
+      <div class="footer__links-group">
+        <h4>Diselenggarakan oleh</h4>
+        <p style="color:var(--ink-muted);font-size:14px;line-height:1.7;">
+          GAIKINDO<br/>
+          (Gabungan Industri Kendaraan Bermotor Indonesia)
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="wrap footer__bottom-inner">
+      <span class="footer__copy">© 2026 GIIAS — Gaikindo Indonesia International Auto Show. Demo UI.</span>
+      <span class="footer__copy">ICE BSD City, Tangerang · 24 Juli – 3 Agustus 2026</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Car Detail View">
+  <button class="lightbox__close" id="lightbox-close" aria-label="Tutup">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lb-prev" aria-label="Sebelumnya">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="lightbox__content">
+    <div class="lightbox__img-wrap">
+      <img id="lb-img" src="" alt="" class="lightbox__img" />
+    </div>
+    <div class="lightbox__info">
+      <span class="lightbox__brand" id="lb-brand"></span>
+      <h2 class="lightbox__model" id="lb-model"></h2>
+      <p class="lightbox__type" id="lb-type"></p>
+      <p class="lightbox__desc" id="lb-desc"></p>
+      <a href="#tiket" class="btn btn--accent" id="lb-ticket-cta" onclick="closeLightbox()">🎫 Mau Lihat Langsung? Beli Tiket</a>
+    </div>
+  </div>
+  <button class="lightbox__nav lightbox__nav--next" id="lb-next" aria-label="Selanjutnya">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</div>
+<div class="lightbox__backdrop" id="lightbox-backdrop"></div>
+
+<script src="/js/particles-field.js"></script>
+<script src="/js/giias.js"></script>
+</body>
+</html>
